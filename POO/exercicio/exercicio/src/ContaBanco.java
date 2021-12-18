@@ -54,20 +54,20 @@ public class ContaBanco {
 
     // !metodos
     public void abrirConta(String t) {
-        setTipo(t);
-        setStatus(true);
+        this.setTipo(t);
+        this.setStatus(true);
         if (t == "CC") {
             // saldo += 50;
-            setSaldo(saldo + 50);
-        } else if (tipo == "CP") {
+            this.setSaldo(saldo + 50);
+        } else if (t == "CP") {
             // saldo += 150;
-            setSaldo(saldo + 150);
+            this.setSaldo(saldo + 150);
         }
     }
 
     public void fecharConta() {
-        if ((getSaldo() == 0) && (getStatus() == true)) {
-            setStatus(false);
+        if ((this.getSaldo() == 0) && (this.getStatus() == true)) {
+            this.setStatus(false);
         } else {
             System.out.println("Não foi possível fechar a conta");
         }
@@ -112,7 +112,7 @@ public class ContaBanco {
 
     // !metodo construtor
     public ContaBanco() {
-        status = false;
-        saldo = 0;
+        setStatus(false);
+        setSaldo(0);
     }
 }
