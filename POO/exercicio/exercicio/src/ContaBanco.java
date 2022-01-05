@@ -48,8 +48,9 @@ public class ContaBanco {
         return status;
     }
 
-    public boolean setStatus(boolean st) {
-        this.status = st;
+    // TODOtipo void
+    public void setStatus(boolean sta) {
+        this.status = sta;
     }
 
     // !metodos
@@ -58,10 +59,10 @@ public class ContaBanco {
         this.setStatus(true);
         if (t == "CC") {
             // saldo += 50;
-            this.setSaldo(saldo + 50);
+            this.setSaldo(50);
         } else if (t == "CP") {
             // saldo += 150;
-            this.setSaldo(saldo + 150);
+            this.setSaldo(150);
         }
     }
 
@@ -74,18 +75,18 @@ public class ContaBanco {
     }
 
     public void depositar(float v) {
-        if (getStatus() == true) {
+        if (this.getStatus() == true) {
             // saldo += valorDeposito;
-            setSaldo(getSaldo() + v);
+            this.setSaldo(getSaldo() + v);
         } else {
             System.out.println("Nao foi possivel depositar");
         }
     }
 
     public void sacar(float v) {
-        if (getSaldo() > 0 && getStatus() == true) {
-            if (getSaldo() >= v) {
-                setSaldo(getSaldo() - v);
+        if (this.getSaldo() > 0 && this.getStatus() == true) {
+            if (this.getSaldo() >= v) {
+                this.setSaldo(getSaldo() - v);
             } else {
                 System.out.println("Saldo insuficiente");
             }
@@ -95,16 +96,16 @@ public class ContaBanco {
     }
 
     public void pagarMensal() {
-        if (getStatus() == true) {
-            if (getTipo() == "CC") {
+        if (this.getStatus() == true) {
+            if (this.getTipo() == "CC") {
                 // saldo -= 12;
-                if (getSaldo() > 12) {
-                    setSaldo(getSaldo() - 12);
+                if (this.getSaldo() > 12) {
+                    this.setSaldo(getSaldo() - 12);
                 }
             } else if (tipo == "CP") {
                 // saldo -= 20;
-                if (getSaldo() > 20) {
-                    setSaldo(getSaldo() - 20);
+                if (this.getSaldo() > 20) {
+                    this.setSaldo(getSaldo() - 20);
                 }
             }
         }
@@ -114,5 +115,15 @@ public class ContaBanco {
     public ContaBanco() {
         setStatus(false);
         setSaldo(0);
+    }
+
+    // !Estado atual
+    public void estado() {
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("Status " + this.getStatus());
+        System.out.println(" ");
     }
 }
