@@ -5,12 +5,14 @@ public class App {
 
         // acessou o atributo pelo metodo acessor
         c1.setModelo("BIC");
+
         // acessou diretamente o atributo
         // não da erro pq o atributo 'modelo' é public
         c1.modelo = "BIC";
 
         // acessou o atributo pelo metodo acessor
         c1.setPonta(0.5f);
+        
         // acessou diretamente o atributo
         // da erro pq o atributo 'ponta' é private
         // ! c1.ponta = 0.5f;

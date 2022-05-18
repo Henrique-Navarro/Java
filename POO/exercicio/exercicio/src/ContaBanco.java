@@ -11,7 +11,6 @@ public class ContaBanco {
     public int getNumConta() {
         return numConta;
     }
-
     public void setNumConta(int n) {
         this.numConta = n;
     }
@@ -20,7 +19,6 @@ public class ContaBanco {
     public String getTipo() {
         return tipo;
     }
-
     public void setTipo(String t) {
         this.tipo = t;
     }
@@ -29,7 +27,6 @@ public class ContaBanco {
     public String getDono() {
         return dono;
     }
-
     public void setDono(String d) {
         this.dono = d;
     }
@@ -38,7 +35,6 @@ public class ContaBanco {
     public float getSaldo() {
         return saldo;
     }
-
     public void setSaldo(float s) {
         this.saldo = s;
     }
@@ -47,10 +43,15 @@ public class ContaBanco {
     public boolean getStatus() {
         return status;
     }
-
-    // TODOtipo void
+    //? tipo void
     public void setStatus(boolean sta) {
         this.status = sta;
+    }
+
+    // !metodo construtor
+    public ContaBanco() {
+        setStatus(false);
+        setSaldo(0);
     }
 
     // !metodos
@@ -109,12 +110,6 @@ public class ContaBanco {
                 }
             }
         }
-    }
-
-    // !metodo construtor
-    public ContaBanco() {
-        setStatus(false);
-        setSaldo(0);
     }
 
     // !Estado atual

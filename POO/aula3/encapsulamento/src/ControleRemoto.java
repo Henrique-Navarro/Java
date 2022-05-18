@@ -14,15 +14,13 @@ public class ControleRemoto implements Controlador {
     private int getVolume() {
         return this.volume;
     }
-
-    private void setVolume(int v) {
+    private void setVolume(int v) { 
         this.volume = v;
     }
 
     private boolean getLigado() {
         return this.ligado;
     }
-
     private void setLigado(boolean l) {
         this.ligado = l;
     }
@@ -30,7 +28,6 @@ public class ControleRemoto implements Controlador {
     private boolean getTocando() {
         return this.tocando;
     }
-
     private void setTocando(boolean t) {
         this.tocando = t;
     }

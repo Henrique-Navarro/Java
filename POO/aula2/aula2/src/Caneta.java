@@ -11,7 +11,6 @@ public class Caneta {
     public String getModelo() {
         return this.modelo;
     }
-
     public void setModelo(String m) {
         this.modelo = m;
     }
@@ -20,7 +19,6 @@ public class Caneta {
     public float getPonta() {
         return this.ponta;
     }
-
     public void setPonta(float p) {
         this.ponta = p;
     }
@@ -29,7 +27,6 @@ public class Caneta {
     public String getCor() {
         return this.cor;
     }
-
     public void setCor(String c) {
         this.cor = c;
     }
@@ -38,7 +35,6 @@ public class Caneta {
     public boolean getTampada() {
         return this.tampada;
     }
-
     // !public boolean setTampada(boolean t) {
     // ! this.tampada = t;}
 

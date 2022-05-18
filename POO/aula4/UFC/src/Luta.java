@@ -1,5 +1,4 @@
 import java.util.Random;
-
 public class Luta {
     // !atributos
     // *criar uma relação entre um tipo abstrato de dado (Lutador) com a instancia
