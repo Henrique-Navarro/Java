@@ -1,0 +1,38 @@
+feito por: Henrique Navarro Morais
+_Implementação Própria_
+
+
+_Tabela de tempo não come_
+Filosofo0 não come a 5 ms
+Filosofo1 não come a 3 ms
+Filosofo2 não come a 9 ms
+Filosofo3 não come a 3 ms
+Filosofo4 não come a 5 ms
+
+_Tabela de vezes_
+Filosofo0 comeu 1003 vezes
+Filosofo1 comeu 1002 vezes
+Filosofo2 comeu 1003 vezes
+Filosofo3 comeu 1002 vezes
+Filosofo4 comeu 1002 vezes
+
+_Tabela de médias de espera_
+Filosofo0 pensa em média 10 ms
+Filosofo1 pensa em média 14 ms
+Filosofo2 pensa em média 16 ms
+Filosofo3 pensa em média 14 ms
+Filosofo4 pensa em média 14 ms
+
+_Tabela de tempo máximo de espera_
+Filosofo0 pensou tempo maximo: 1018 ms
+Filosofo1 pensou tempo maximo: 203 ms
+Filosofo2 pensou tempo maximo: 1060 ms
+Filosofo3 pensou tempo maximo: 206 ms
+Filosofo4 pensou tempo maximo: 467 ms
+
+_Tabela de tempo_
+Filosofo0 pensou 114 ms
+Filosofo1 pensou 120 ms
+Filosofo2 pensou 109 ms
+Filosofo3 pensou 55 ms
+Filosofo4 pensou 95 ms

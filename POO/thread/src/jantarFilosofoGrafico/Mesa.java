@@ -1,71 +1,59 @@
 package jantarFilosofoGrafico;
-
 import java.awt.Color;
-import java.util.ArrayList;
+import java.io.IOException;
+
 import javax.swing.JButton;
 
 public class Mesa {
 	final static int NR_FILOSOFOS = 5;
 	final static int PRIMEIRO_FILOSOFO = 0;
 	final static int ULTIMO_FILOSOFO = NR_FILOSOFOS - 1;
-
 	JButton garfosBut[];
 	boolean[] garfos = new boolean[NR_FILOSOFOS];
-
-	//vetor que contém todos os filosofos[5]
 	Estados[] filosofos = new Estados[NR_FILOSOFOS];
-	int[] tentativas = new int[NR_FILOSOFOS];
+
+	int tentativas[] = new int[5];
+	int comeuVezes[] = new int[5];
+	long pensouTempo[] = new long[5];
+	long mediaTempo[] = new long[5];
+	long naoComeTempo[] = new long[5];
+	long tempoMaximo[] = new long[5];
+	long naoComeTempoTotal[] = new long[5];
 
 	//constructor
 	public Mesa(JButton garfosBut[]){
 		for (int i = 0; i < 5; i++){
-			//deixa todos os garfos disponíveis
-			//deixa todos os filósofos famintos
-			//reseta todas as tentativas
-
 			garfos[i] = true;
 			filosofos[i] = Estados.FAMINTO;
-			tentativas[i] = 0;
-			
 			this.garfosBut=garfosBut;
+			tentativas[i]=0;comeuVezes[i]=0;pensouTempo[i]=0;mediaTempo[i]=0;naoComeTempo[i]=0;tempoMaximo[i]=0;naoComeTempoTotal[i]=0;
 		}
 	}
 
 	public synchronized void pegarGarfos (int filosofo){
-		//fazer semáforo
 		garfosBut[filosofo].setBackground(Color.green);
 		filosofos[filosofo] = Estados.FAMINTO;
 		//enquanto os vizinhos estiverem comendo, espere!
 		while (filosofos[aEsquerda(filosofo)] == Estados.COMENDO || filosofos[aDireita(filosofo)] == Estados.COMENDO){
 			try{
 				tentativas[filosofo]++;
-				//COMENDO
 				wait();
 			}catch (InterruptedException e){
 
 			}
 		}
-		/*
-		Dando Starvation?
-		System.out.println("O Filósofo morreu devido a starvation");
-		tentativas[filosofo] = 0;
-		 */
-
-		//ocupa os garfos e fica COMENDO
 		garfos[garfoEsquerdo(filosofo)] = false;
 		garfos[garfoDireito(filosofo)] = false;
 		filosofos[filosofo] = Estados.COMENDO;
 
 		//imprime dados
-		/*imprimeEstadosFilosofos();
-		imprimeGarfos();
-		imprimeTentativas();*/
 
+		exibirDados();
 	}
 
 	public synchronized void returningGarfos (int filosofo){
 		garfosBut[filosofo].setBackground(Color.white);
-		//libera os garfos
+
 		garfos[garfoEsquerdo(filosofo)] = true;
 		garfos[garfoDireito(filosofo)] = true;
 
@@ -73,15 +61,7 @@ public class Mesa {
 		if (filosofos[aEsquerda(filosofo)] == Estados.FAMINTO || filosofos[aDireita(filosofo)] == Estados.FAMINTO){
 			notifyAll();
 		}
-
-		//para de COMENDO e fica PENSANDO
 		filosofos[filosofo] = Estados.PENSANDO;
-
-		//imprime Dados
-		/*imprimeEstadosFilosofos();
-		imprimeGarfos();
-		imprimeTentativas();*/
-		
 	}
 
 	public int aDireita (int filosofo){
@@ -117,6 +97,65 @@ public class Mesa {
 			garfoDireito = filosofo + 1;
 		}
 		return garfoDireito;
+	}
+
+	public void pensouTempo(int filosofo, int tempo) {
+		this.pensouTempo[filosofo]=tempo;
+	}
+
+	public void naoComeuTempo(int filosofo, long tempo) {
+		this.naoComeTempo[filosofo]=tempo;
+	}
+
+	public void comeuVezes(int filosofo) {
+		this.comeuVezes[filosofo]++;
+	}
+
+	public void mediaTempo(int filosofo, long tempoEspera) {
+		try {
+			naoComeTempoTotal[filosofo]+=naoComeTempo[filosofo];
+			this.mediaTempo[filosofo]= naoComeTempoTotal[filosofo]/comeuVezes[filosofo];
+		}
+		catch(ArithmeticException e) {
+			naoComeTempoTotal[filosofo]+=naoComeTempo[filosofo];
+			this.mediaTempo[filosofo]= naoComeTempoTotal[filosofo]/1;
+		}
+	}
+
+	public void tempoMaximo(int filosofo, long tempo) {
+		if(tempoMaximo[filosofo]<tempo)
+			tempoMaximo[filosofo]=tempo;
+	}
+
+	public void exibirDados() {
+
+		System.out.println("\n\n\n\n_Implementação Dijkstra_\n");
+		System.out.println("\n_Tabela de tempo não come_");
+		for(int i=0; i<5; i++) {
+			System.out.println("Filosofo"+i+" não come a "+naoComeTempo[i]+" ms");
+		}
+
+		System.out.println("\n_Tabela de vezes_");
+		for(int i=0; i<5; i++) {
+			System.out.println("Filosofo"+i+" comeu "+comeuVezes[i]+" vezes");
+		}
+
+		System.out.println("\n_Tabela de médias de espera_");
+		for(int i=0; i<5; i++) {
+			System.out.println("Filosofo"+i+" pensa em média "+mediaTempo[i]+" ms");
+		}
+
+		System.out.println("\n_Tabela de tempo máximo de espera_");
+		for(int i=0; i<5; i++) {
+			System.out.println("Filosofo"+i+" pensou tempo maximo: "+tempoMaximo[i]+" ms");
+		}
+
+		System.out.println("\n_Tabela de tempo_");
+		for(int i=0; i<5; i++) {
+			System.out.println("Filosofo"+i+" pensou "+pensouTempo[i]+" ms");
+		}
+
+
 	}
 
 	//imprime Dados

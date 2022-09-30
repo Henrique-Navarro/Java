@@ -1,17 +1,17 @@
 package ifsuldeminas.funcionarios;
 
 public class Professor {
-	//attributes
+	//ATTRIBUTES
 	private String nome;
 	private int suap;
 	
-	//constructor
+	//CONSTRUCTOR
 	public Professor(String nome, int suap) {
 		this.nome = nome;
 		this.suap = suap;
 	}
 	
-	//getters setters
+	//GETTERS SETTERS
 	public String getNome() {
 		return nome;
 	}
@@ -25,8 +25,8 @@ public class Professor {
 		this.suap = suap;
 	}
 
-	//metodos
+	//METHODS
 	public String exibirProfessor() {
-		return "Professor [nome=" + nome + ", suap=" + suap + "]";
+		return "\nProfessor: \nNome: " + nome + "\nSuap: " + suap+"\n";
 	}
 }

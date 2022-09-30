@@ -1,0 +1,38 @@
+feito por: Henrique Navarro Morais
+_Implementação Dijkstra_
+
+
+_Tabela de tempo não come_
+Filosofo0 não come a 68 ms
+Filosofo1 não come a 22 ms
+Filosofo2 não come a 77 ms
+Filosofo3 não come a 211 ms
+Filosofo4 não come a 0 ms
+
+_Tabela de vezes_
+Filosofo0 comeu 999 vezes
+Filosofo1 comeu 984 vezes
+Filosofo2 comeu 1011 vezes
+Filosofo3 comeu 1015 vezes
+Filosofo4 comeu 1022 vezes
+
+_Tabela de médias de espera_
+Filosofo0 pensa em média 63 ms
+Filosofo1 pensa em média 61 ms
+Filosofo2 pensa em média 59 ms
+Filosofo3 pensa em média 58 ms
+Filosofo4 pensa em média 60 ms
+
+_Tabela de tempo máximo de espera_
+Filosofo0 pensou tempo maximo: 637 ms
+Filosofo1 pensou tempo maximo: 344 ms
+Filosofo2 pensou tempo maximo: 420 ms
+Filosofo3 pensou tempo maximo: 317 ms
+Filosofo4 pensou tempo maximo: 391 ms
+
+_Tabela de tempo_
+Filosofo0 pensou 44 ms
+Filosofo1 pensou 111 ms
+Filosofo2 pensou 111 ms
+Filosofo3 pensou 59 ms
+Filosofo4 pensou 5 ms

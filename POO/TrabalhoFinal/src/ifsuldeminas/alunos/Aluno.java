@@ -1,13 +1,13 @@
 package ifsuldeminas.alunos;
 
 public class Aluno {
-	//attributes
+	//ATTRIBUTES
 	private String nome;
 	private int ra;
 	private int periodo;
 	private String curso;
-	
-	//constructor
+
+	//CONSTRUCTOR
 	public Aluno(String nome, int ra, String curso) {
 		this.nome = nome;
 		this.ra = ra;
@@ -20,8 +20,8 @@ public class Aluno {
 		this.periodo = periodo;
 		this.curso = curso;
 	}
-	
-	//getters setters
+
+	//GETTERS SETTERS
 	public String getNome() {
 		return nome;
 	}
@@ -46,9 +46,9 @@ public class Aluno {
 	public void setCurso(String curso) {
 		this.curso = curso;
 	}
-	
-	//metodos
+
+	//METHODS
 	public String exibirAluno() {
-		return "Aluno [nome=" + nome + ", ra=" + ra + ", periodo=" + periodo + ", curso=" + curso + "]";
+		return "\nAluno:\nnome=" + nome + "\nra=" + ra + "\nperiodo=" + periodo + "\ncurso=" + curso;
 	}
 }

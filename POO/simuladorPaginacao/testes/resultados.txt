@@ -1,0 +1,48 @@
+Henrique Navarro Morais
+
+Virtual: 1024
+Físico: 512
+Acessos: 100000
+
+
+_ALGORITMO ÓTIMO_
+HIT: 91566
+MISS: 8434 (substituidas: 7922)
+PÁGINAS SUBSTITUIDAS: 7922
+TAXA: 91%
+TEMPO: 35213ms
+
+_ALEATÓRIO_
+HIT: 79334
+MISS: 20666 (substituidas: 20154)
+TAXA: 79%
+GAP: 13,36% pior que o ÓTIMO
+TEMPO: 207ms
+
+_NÃO USADA RECENTEMENTE_
+HIT: 80437
+MISS: 19563 (substituidas: 19051)
+TAXA: 80%
+GAP: 12,15% pior que o ÓTIMO
+TEMPO: 733ms
+
+_FIFO_
+HIT: 79060
+MISS: 20940 (substituidas: 20428)
+TAXA: 79%
+GAP: 13,66% pior que o ÓTIMO
+TEMPO: 247ms
+
+_SEGUNDA CHANCE_
+HIT: 86939
+MISS: 13061 (substituidas: 12549)
+TAXA: 86%
+GAP: 5,05% pior que o ÓTIMO
+TEMPO: 182ms
+
+_MENOS RECENTEMENTE USADA_
+HIT: 86639
+MISS: 13361 (substituidas: 12849)
+TAXA: 86%
+GAP: 5,38% pior que o ÓTIMO
+TEMPO: 218ms
