@@ -49,7 +49,7 @@ public class View extends JFrame {
 		//INTERFACE
 		EventQueue.invokeLater(new Runnable() {public void run() {try {View frame = new View();frame.setVisible(true);} catch (Exception e) {e.printStackTrace();}}});
 
-		Arquivo arq = new Arquivo("./testes/teste1.txt");
+		Arquivo arq = new Arquivo("C:\\Users\\Usuario\\OneDrive\\Documentos\\IF\\Programação\\Java\\POO\\simuladorPaginacao\\testes\\teste1.txt");
 		memFisica = arq.memFisica;
 		memVirtual = arq.memVirtual;
 		arrayAcessos = arq.arrayAcessos;
