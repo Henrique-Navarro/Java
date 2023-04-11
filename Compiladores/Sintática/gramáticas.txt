@@ -1,0 +1,27 @@
+E-> +EE
+E-> *EE
+E-> a
+E-> b
+
+S-> aSc
+S-> b
+
+S-> a
+S-> [L]
+L-> S
+L-> L;S
+
+S-> (L)
+S-> a
+L-> L,S
+L-> S
+
+
+
+
+//teste
+E-> TS
+S-> +TS|e
+T-> FM
+M-> *FM|e
+F-> a|(E)
